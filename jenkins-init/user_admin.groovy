@@ -5,7 +5,7 @@ import jenkins.security.s2m.AdminWhitelistRule
 def instance = Jenkins.getInstance()
 
 def hudsonRealm = new HudsonPrivateSecurityRealm(false)
-hudsonRealm.createAccount("rgill","password")
+hudsonRealm.createAccount("rgill","1st*Rate")
 instance.setSecurityRealm(hudsonRealm)
 
 def strategy = new GlobalMatrixAuthorizationStrategy()
