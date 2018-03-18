@@ -7,11 +7,10 @@ COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
 USER root
 
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-RUN echo 2.7.3 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
-RUN echo 2.7.3 > /usr/share/jenkins/ref/jenkins.install.InstallUtil.lastExecVersion
-RUN install-plugins.sh
-RUN chown -R jenkins\: /usr/share/jenkins/
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt && \
+    echo 2.7.3 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state && \
+    echo 2.7.3 > /usr/share/jenkins/ref/jenkins.install.InstallUtil.lastExecVersion && \
+    chown -R jenkins\: /usr/share/jenkins/
 
 USER jenkins
 

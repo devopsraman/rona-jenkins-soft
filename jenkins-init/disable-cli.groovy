@@ -26,5 +26,3 @@ def removal = { lst ->
 def j = Jenkins.instance;
 removal(j.getExtensionList(RootAction.class))
 removal(j.actions)
-
-//logger.info("CLI disabled")
